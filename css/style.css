@@ -1,0 +1,306 @@
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --primary-color:rgb(115,226,144);
+  --secondary-color:#1c3fa8;
+  --dark-color:#002240;
+  --light-color:#f4f4f4;
+}
+
+body{
+  font-family: 'lato', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color:#333;
+}
+
+p{
+  margin:10px 0;
+}
+
+h1,h2{
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+img{
+  width:100%;
+}
+
+/*navbar*/
+
+.navbar .flex{
+  justify-content: space-between;
+}
+
+.navbar ul{
+  display: flex;
+  font-size: 18px;
+}
+
+.navbar a{
+  color:#013870;
+  padding: 10px;
+  margin: 0 5px;
+}
+
+.navbar a:hover{
+  border-bottom:  2px #fff solid;
+}
+
+.navbar{
+  background-color: var(--primary-color);
+  color:#013870;
+  height: 70px;
+}
+
+/*showcase*/
+
+.showcase{
+  height:400px;
+  background-color: var(--primary-color);
+  color:#013870;
+  position: relative;
+}
+
+.showcase .grid{
+  overflow: visible;
+  grid-template-columns: 55% 45%;
+  gap: 30px;
+}
+
+.showcase-text{
+  animation: slideFromLeft 1s ease-in;
+}
+
+.showcase-text p{
+  font-size: 20px;
+}
+
+.showcase-form{
+   position: relative;
+   top:60px;
+   height: 350px;
+   width: 400px;
+   padding: 40px;
+   z-index: 100;
+   background: linear-gradient(#141e30, #243b55);
+   justify-self: flex-end;
+   animation: slideFromRight 1s ease-in;
+}
+
+.showcase-form .form-control{
+  margin: 30px 0;
+}
+
+.showcase-form h2{
+  color: #fff;
+  font-weight: bold;
+}
+
+.showcase-form input[type='text'],
+.showcase-form input[type='email']{
+  border:0;
+  background: transparent;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  width: 100%;
+  padding: 3px;
+  font-size: 16px;
+}
+
+.showcase-form input:focus {
+  outline: none;
+}
+
+.showcase::after{
+  content: '';
+  position: absolute;
+  height:100px;
+  bottom:-70px;
+  right: 0;
+  left: 0;
+  background: #fff;
+  transform: skewY(-3deg);
+  -webkit-transform: skewY(-3deg);
+  -moz-transform: skewY(-3deg);
+  -ms-transform: skewY(-3deg);
+}
+
+/* stats*/
+
+.stats{
+  padding-top:100px;
+  animation: slideToTop 1s ease-in;
+}
+
+.stats .grid h3{
+  font-size: 35px;
+}
+
+.stats .grid p{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* CLI */
+
+.cli .grid{
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.cli .grid img{
+  grid-column:  1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+/* cloud */
+
+.cloud .grid{
+  grid-template-columns: 4fr 3fr;
+}
+
+/* lang */
+
+.languages .card{
+  text-align: center;
+  margin: 18px 10px 40px;
+  transition: transform 0.2s ease-in;
+}
+
+.languages .flex{
+  flex-wrap: wrap;
+}
+
+.languages .card h4{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.languages .card:hover{
+  transform: translateY(-15px);
+}
+
+/* footer */
+
+.footer .grid{
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.social i{
+  margin: 0 13px;
+}
+
+@keyframes slideFromLeft {
+
+  0%{
+    transform: translateX(-100%);
+  }
+
+  100%{
+    transform: translateX(0);
+  }
+
+}
+
+@keyframes slideFromRight {
+
+  0%{
+    transform: translateX(100%);
+  }
+
+  100%{
+    transform: translateX(0);
+  }
+
+}
+
+@keyframes slideToTop {
+
+  0%{
+    transform: translateY(100%);
+  }
+
+  100%{
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes slideToBottom {
+
+  0%{
+    transform: translateY(-100%);
+  }
+
+  100%{
+    transform: translateY(0);
+  }
+
+}
+
+/* Tablets and under */
+
+@media(max-width:768px){
+
+  .grid,
+  .showcase .grid,
+  .cloud .grid,
+  .cli .grid,
+  .stats .grid{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .showcase{
+    height:auto;
+  }
+
+  .showcase-text{
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .showcase-form{
+    justify-self:center;
+    margin:auto;
+  }
+
+  .cli .grid{
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+}
+
+/* mobiles */
+@media(max-width:500px){
+
+  .navbar{
+    height:110px;
+  }
+
+  .navbar .flex{
+    flex-direction: column;
+  }
+
+  .navbar  ul{
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+}
