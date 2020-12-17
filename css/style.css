@@ -280,7 +280,7 @@ img{
     margin:auto;
   }
 
-  .cli .grid{
+  .cli .grid img{
     grid-column: 1;
     grid-row: 1;
   }
@@ -303,4 +303,12 @@ img{
     background-color: rgba(0, 0, 0, 0.1);
   }
 
+}
+
+/* iphone X */
+@media(max-width:380px){
+
+  .showcase-form{
+    width: 350px;
+  }
 }
